@@ -12,9 +12,18 @@ body {
     background-color: #000;
 }
 
+a {
+    text-decoration: none;
+    color: #7b7e82;
+}
+
 /* UTILITIES */
 .text-center {
     text-align: center;
+}
+
+.color-white {
+    color: #fff;
 }
 
 /* SECTIONS */
@@ -46,21 +55,66 @@ body {
     background-color: #808080;
 }
 
-/* Main Content */
-.main-content {
+/* Main Section */
+.main-section {
     height: 100%;
     flex-grow: 1;
     position: relative;
-    background-color: #7b7e82;
+    background-color: #141922;
 }
 
-.main-content header {
+.main-section header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     position: absolute;
     top: 0;
     right: 0;
     height: 90px;
     width: 100%;
-    background-color: aqua;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-section header button {
+    background-color: transparent;
+    border: 1px solid currentColor;
+    border-radius: 40px;
+    padding: 15px 40px;
+
+}
+
+.main-section .main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    padding: 115px 20px;
+}
+
+.main-section .main-content nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.main-section .main-content nav a {
+    margin-bottom: 40px;
+}
+
+.main-section .main-content .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main-section .main-content .card {
+    width: calc(100% / 2);
+}
+
+.main-section .main-content .card img {
+    height: 215px;
 }
 /* Footer */
 .player {
