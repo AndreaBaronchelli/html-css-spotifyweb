@@ -26,16 +26,18 @@ a {
     color: #fff;
 }
 
+.flex {
+    display: flex;
+}
+
 /* SECTIONS */
 /* Main */
 .main-app {
-    display: flex;
     height: calc(100vh - 90px);
 }
 
 /* Aside */
 .main-app .navbar {
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
@@ -58,13 +60,14 @@ a {
 /* Main Section */
 .main-section {
     height: 100%;
-    flex-grow: 1;
+    width: calc(100vw - 50px);
     position: relative;
     background-color: #141922;
 }
 
+/* Main Section > Header */
 .main-section header {
-    display: flex;
+    z-index: 2;
     justify-content: flex-end;
     align-items: center;
     position: absolute;
@@ -73,7 +76,7 @@ a {
     height: 90px;
     width: 100%;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .main-section header button {
@@ -84,16 +87,16 @@ a {
 
 }
 
+/* Main Section > Main Content */
 .main-section .main-content {
-    display: flex;
     flex-direction: column;
     height: 100%;
     overflow-y: auto;
     padding: 115px 20px;
 }
 
+/* Main Section > Main Content > Nav */
 .main-section .main-content nav {
-    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     font-size: 14px;
@@ -101,26 +104,191 @@ a {
 
 .main-section .main-content nav a {
     margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
+/* Main Section > Main Content > Cards */
 .main-section .main-content .cards {
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding-top: 35px;
 }
 
-main-section .main-content .card {
-    width: calc(100% / 2);
+.main-section .main-content .card {
+    width: calc((100% / 2) - 20px);
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.main-section .main-content .card .cover {
+    position: relative;
+}
+
+.main-section .main-content .card:nth-child(even) {
+    margin-right: 0;
+}
+
+.main-section .main-content .card h3 {
+    margin: 1rem 0;
 }
 
 .main-section .main-content .card img {
-    height: 215px;
+    width: 100%;
 }
+
+.main-section .main-content .card .layover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.main-section .main-content .card .layover i {
+    font-size: 50px;
+}
+
+.main-section .main-content .card:hover .layover {
+    opacity: 1;
+}
+
+/* Main Section > Main Content > Created */
+.main-section .main-content .subtitle {
+    margin-top: 15px;
+}
+
+/* Main Section > Main Content > Artists */
+.main-section .main-content .artist .card img {
+    border-radius: 50%;
+}
+
+.main-section .main-content .artist .card .cover .layover {
+    border-radius: 50%;
+}
+
 /* Footer */
 .player {
+    z-index: 3;
+    position: relative;
     height: 90px;
+    justify-content: space-between;
     background-color: #282828;
+    padding: 0 5px;
+    font-size: 10px;
+    font-weight: bold;
 }
+
+/* Footer-left */
+.player .footer-left {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.player .footer-left img {
+    width: 30px;
+    margin-right: 5px;
+}
+.player .footer-left h5 {
+    font-size: 12px;
+}
+.player .footer-left .icons {
+    margin-left: 25px;
+}
+
+.player .footer-left .icons i {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Footer Center */
+.player .footer-center {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.player .footer-center .controls {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.player .footer-center .controls i{
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.player .footer-center .controls i:nth-child(3) {
+    font-size: 30px;
+}
+
+.player .footer-center .player-bar {
+    justify-content: center;
+    align-items: center;
+}
+
+.player .footer-center .player-bar .bar {
+    position: relative;
+    margin: 0 5px;
+    height: 5px;
+    width: 65%;
+    border-radius: 5px;
+    background-color: #5a5a5a;
+}
+
+.player .footer-center .player-bar .bar::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    border-radius: 5px;
+    background-color: #c1c1c1;
+}
+
+/* Footer Right */
+.player .footer-right {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.player .footer-right .icons i {
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.player .footer-right .bar {
+    position: relative;
+    margin: 0 5px;
+    height: 5px;
+    width: 80px;
+    border-radius: 5px;
+    background-color: #5a5a5a;
+}
+
+.player .footer-right .bar::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    border-radius: 5px;
+    background-color: #c1c1c1;
+}
+
 
 /*********************************************************
 RESPONSIVE (MOBILE-FIRST)
