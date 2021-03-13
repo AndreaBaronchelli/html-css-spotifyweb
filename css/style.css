@@ -389,6 +389,10 @@ a {
     font-size: 12px;
 }
 
+.player .footer-right .icons a:hover {
+    color: #fff;
+}
+
 .player .footer-right .bar,
 .player .footer-center .player-bar .bar {
     position: relative;
@@ -413,6 +417,7 @@ a {
 .player .footer-center .player-bar .bar:hover .active-bar,
 .player .footer-right .bar:hover .active-bar {
     background-color: greenyellow;
+    cursor: pointer;
 }
 
 .player .footer-center .player-bar .bar:hover .active-bar::after,
