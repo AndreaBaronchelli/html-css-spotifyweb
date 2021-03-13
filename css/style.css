@@ -30,6 +30,10 @@ a {
     display: flex;
 }
 
+.hidden-xs {
+    display: none;
+}
+
 /* SECTIONS */
 /* Main */
 .main-app {
@@ -45,13 +49,36 @@ a {
     padding: 5px 0;
 }
 
-.navbar img {
-    width: 30px;
+/* Top-aside */
+/* Main-Navigation */
+.navbar .label {
     margin-bottom: 10px;
 }
 
-.navbar .logo img:last-child {
-    display: none;
+.main-app .navbar a {
+    font-size: 12px;
+}
+
+.main-app .navbar .logo {
+    margin-bottom: 10px;
+}
+
+.main-app .navbar .logo img:last-child {
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.main-app .navbar .label {
+    justify-content: center;
+    align-items: center;
+}
+
+.main-app .navbar .label a {
+    margin-left: 5px;
+}
+
+.navbar img {
+    width: 30px;
 }
 
 .navbar img:hover,
@@ -61,20 +88,68 @@ a {
     color: #fff;
 }
 
-.playlist ul {
+/* Playlist */
+.main-app .navbar .playlist {
+    margin-top: 20px;
+}
+
+.main-app .navbar .playlist ul {
     list-style: none;
 }
 
-.navbar .account {
-    flex-direction: column;
-    align-items: center;
+.main-app .navbar .playlist li {
+    margin-bottom: 10px;
 }
 
-.navbar .account img {
+.main-app .navbar .playlist .create {
+    align-items: center;
+    margin-top: 10px;
+}
+
+.main-app .navbar .playlist .create i {
+    font-size: 40px;
+    margin-right: 5px;
+}
+
+/* Account */
+.main-app .navbar .account {
+    flex-direction: column;
+}
+
+.main-app .navbar .account img {
     height: 30px;
-    margin-top: 20px;
     border-radius: 50%;
     background-color: #808080;
+}
+
+.main-app .navbar .account .install {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main-app .navbar .account .install i {
+    margin-right: 5px;
+}
+
+.main-app .navbar .account .install::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    display: block;
+    margin-top: 10px;
+    height: 1px;
+    width: 100%;
+    background-color: #5a5a5a;
+    display: none;
+}
+
+.main-app .navbar .account .profile {
+   align-items: center;
+   justify-content: center;
+   margin-top: 20px;
+   width: 100%;
 }
 
 /* Main Section */
@@ -172,7 +247,12 @@ a {
 }
 
 .main-section .main-content .card h3 {
-    margin: 1rem 0;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.main-section .main-content .card .author {
+    font-size: 12px;
 }
 
 .main-section .main-content .card img {
@@ -270,9 +350,13 @@ a {
     margin-bottom: 10px;
 }
 
-.player .footer-center .controls i{
+.player .footer-center .controls i {
     font-size: 18px;
     margin-right: 20px;
+}
+
+.player .footer-center .controls i:last-child {
+    margin-right: 0;
 }
 
 .player .footer-center .controls i:nth-child(3) {
@@ -350,6 +434,14 @@ RESPONSIVE (MOBILE-FIRST)
 *********************************************************/
 /* From 601px to 767 */
 @media screen and (min-width: 601px) {
+    /* UTILITIES */
+    .hidden-xs {
+        display: block;
+    }
+    .hidden-s {
+        display: none;
+    }
+    /* SECTIONS */
     /* Aside */
     .main-app .navbar {
         width: 230px;
@@ -357,72 +449,82 @@ RESPONSIVE (MOBILE-FIRST)
         overflow-y: auto;
     }
 
-    .main-app .navbar a {
-        font-size: 12px;
+    .main-app .navbar .active {
+        position: relative;
     }
 
-    .main-app .navbar .logo img:first-child {
-        display: none;
-    }
+    .main-app .navbar .active:before {
+        content: "";
+        display: inline-block;
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -15px;
+        background-color: greenyellow;
 
-    .main-app .navbar .logo img:last-child {
-        display: block;
-        width: 80%;
-        margin-bottom: 30px;
     }
 
     .main-app .navbar .label {
         justify-content: flex-start;
-        align-items: center;
     }
 
-    .main-app .navbar .label a {
-        margin-left: 5px;
-    }
-
-    .main-app .navbar .playlist {
-        display: block;
-        margin-top: 20px;
-    }
-
-    .main-app .navbar .playlist li {
-        margin-bottom: 10px;
-    }
-
-    .main-app .navbar .playlist .create {
-        align-items: center;
-    }
-
-    .main-app .navbar .playlist .create i {
-        font-size: 40px;
-        margin-top: 10px;
-        margin-right: 5px;
-    }
-
-    .main-app .navbar .account {
-        align-items: flex-start;
-    }
-
-    .main-app .navbar .account .install {
-        text-align: left;
-        width: 100%;
+    .main-app .navbar .account .install,
+    .main-app .navbar .account .profile {
+        justify-content: flex-start;
     }
 
     .main-app .navbar .account .install::after {
-        content: "";
         display: block;
-        margin-top: 10px;
-        height: 1px;
-        width: 100%;
-        background-color: #5a5a5a;
     }
-
-    .main-app .navbar .account .profile {
-       align-items: center;
-       justify-content: flex-start;
-    }
-
+    
     .main-app .navbar .account .profile img {
+        margin-right: 5px;
+    }
+
+    /* Footer */
+    .player .footer-left .info {
+        display: inline-block;
+    }
+}
+
+/* From 768px to 1199px */
+@media screen and (min-width: 768px) {
+    /* Cards */
+    .main-section .main-content .cards {
+        justify-content: flex-start;
+    }
+
+    .main-section .main-content .card {
+        width: calc((100% / 4) - 20px);
+    }
+
+    .main-section .main-content .card:nth-child(even) {
+        margin-right: 5px;
+    }
+
+    .main-section .main-content .card:nth-child(4n) {
+        margin-right: 0;
+    }
+
+    /* Footer */
+    .player .footer-left .icons i {
+        display: inline-block;
         margin-right: 10px;
+    }
+}
+
+/* From 1200px */
+@media screen and (min-width: 1200px) {
+    .main-section .main-content .card {
+        width: calc((100% / 6) - 20px);
+    }
+
+    .main-section .main-content .card:nth-child(4n) {
+        margin-right: 5px;
+    }
+
+    .main-section .main-content .card:nth-child(6n) {
+        margin-right: 0;
     }
 }
