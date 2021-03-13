@@ -50,6 +50,26 @@ a {
     margin-bottom: 10px;
 }
 
+.navbar .logo img:last-child {
+    display: none;
+}
+
+.navbar img:hover,
+.navbar i:hover,
+.navbar a:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.playlist ul {
+    list-style: none;
+}
+
+.navbar .account {
+    flex-direction: column;
+    align-items: center;
+}
+
 .navbar .account img {
     height: 30px;
     margin-top: 20px;
@@ -84,7 +104,11 @@ a {
     border: 1px solid currentColor;
     border-radius: 40px;
     padding: 15px 40px;
+    transition: font-size 0.2s;
+}
 
+.main-section header button:hover {
+    font-size: 16px;
 }
 
 /* Main Section > Main Content */
@@ -103,9 +127,27 @@ a {
 }
 
 .main-section .main-content nav a {
+    position: relative;
     margin-bottom: 40px;
     font-size: 14px;
     font-weight: bold;
+    transition: color 0.2s;
+}
+
+.main-section .main-content nav a.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 40%;
+    background-color: greenyellow;
+}
+
+.main-section .main-content nav a:hover {
+    color: #fff;
 }
 
 /* Main Section > Main Content > Cards */
@@ -198,6 +240,13 @@ a {
 .player .footer-left h5 {
     font-size: 12px;
 }
+
+.player .footer-left .info:hover,
+.player .footer-left .icons i:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
 .player .footer-left .icons {
     margin-left: 25px;
 }
@@ -228,32 +277,20 @@ a {
 
 .player .footer-center .controls i:nth-child(3) {
     font-size: 30px;
+    transition: font-size 0.2s;
+}
+
+.player .footer-center .controls i:hover {
+    cursor: pointer;
+}
+
+.player .footer-center .controls i:nth-child(3):hover {
+    font-size: 34px;
 }
 
 .player .footer-center .player-bar {
     justify-content: center;
     align-items: center;
-}
-
-.player .footer-center .player-bar .bar {
-    position: relative;
-    margin: 0 5px;
-    height: 5px;
-    width: 65%;
-    border-radius: 5px;
-    background-color: #5a5a5a;
-}
-
-.player .footer-center .player-bar .bar::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 30%;
-    border-radius: 5px;
-    background-color: #c1c1c1;
 }
 
 /* Footer Right */
@@ -268,7 +305,8 @@ a {
     font-size: 12px;
 }
 
-.player .footer-right .bar {
+.player .footer-right .bar,
+.player .footer-center .player-bar .bar {
     position: relative;
     margin: 0 5px;
     height: 5px;
@@ -277,9 +315,8 @@ a {
     background-color: #5a5a5a;
 }
 
-.player .footer-right .bar::before {
-    content: "";
-    display: block;
+.player .footer-right .bar .active-bar,
+.player .footer-center .player-bar .active-bar {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -289,7 +326,103 @@ a {
     background-color: #c1c1c1;
 }
 
+.player .footer-center .player-bar .bar:hover .active-bar,
+.player .footer-right .bar:hover .active-bar {
+    background-color: greenyellow;
+}
+
+.player .footer-center .player-bar .bar:hover .active-bar::after,
+.player .footer-right .bar:hover .active-bar::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -5px;
+    bottom: -2px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
 
 /*********************************************************
 RESPONSIVE (MOBILE-FIRST)
 *********************************************************/
+/* From 601px to 767 */
+@media screen and (min-width: 601px) {
+    /* Aside */
+    .main-app .navbar {
+        width: 230px;
+        padding: 15px;
+        overflow-y: auto;
+    }
+
+    .main-app .navbar a {
+        font-size: 12px;
+    }
+
+    .main-app .navbar .logo img:first-child {
+        display: none;
+    }
+
+    .main-app .navbar .logo img:last-child {
+        display: block;
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .main-app .navbar .label {
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .main-app .navbar .label a {
+        margin-left: 5px;
+    }
+
+    .main-app .navbar .playlist {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .main-app .navbar .playlist li {
+        margin-bottom: 10px;
+    }
+
+    .main-app .navbar .playlist .create {
+        align-items: center;
+    }
+
+    .main-app .navbar .playlist .create i {
+        font-size: 40px;
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+
+    .main-app .navbar .account {
+        align-items: flex-start;
+    }
+
+    .main-app .navbar .account .install {
+        text-align: left;
+        width: 100%;
+    }
+
+    .main-app .navbar .account .install::after {
+        content: "";
+        display: block;
+        margin-top: 10px;
+        height: 1px;
+        width: 100%;
+        background-color: #5a5a5a;
+    }
+
+    .main-app .navbar .account .profile {
+       align-items: center;
+       justify-content: flex-start;
+    }
+
+    .main-app .navbar .account .profile img {
+        margin-right: 10px;
+    }
+}

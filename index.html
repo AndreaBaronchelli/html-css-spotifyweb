@@ -17,15 +17,51 @@
     <!-- MAIN -->
     <main class="main-app flex">
         <aside class="navbar flex">
-            <nav class="main-navigation text-center">
-                <img src="./img/logo-small.svg" alt="Spotify Logo">
-                <img src="./img/home.svg" alt="Home">
-                <img src="./img/search.svg" alt="Search">
-                <img src="./img/libreria.svg" alt="Library">
-            </nav>
-            <div class="account text-center">
-                <i class="far fa-arrow-alt-circle-down"></i>
-                <img src="./img/profile.svg" alt="Profile Image">
+            <div class="top-aside">
+                <nav class="main-navigation text-center">
+                    <div class="logo">
+                        <img src="./img/logo-small.svg" alt="Spotify Logo">
+                        <img src="./img/logo.svg" alt="Spotify">
+                    </div>
+                    <div class="label flex">
+                        <img src="./img/home.svg" alt="Home">
+                        <a href="#">Home</a>
+                    </div>
+                    <div class="label flex">
+                        <img src="./img/search.svg" alt="Search">
+                        <a href="#">Cerca</a>
+                    </div>
+                    <div class="label flex">
+                        <img src="./img/libreria.svg" alt="Library">
+                        <a href="#">Libreria</a>
+                    </div>
+                </nav>
+                <nav class="playlist">
+                    <h5 class="color-white">PLAYLIST</h5>
+                    <ul>
+                        <li class="create flex">
+                            <i class="fas fa-plus-square"></i>
+                            <a href="#">Crea Playlist</a>
+                        </li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                        <li><a href="#">Nome Playlist</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="account flex text-center">
+                <div class="install">
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                    <a href="#">Installa app</a>
+                </div>
+                <div class="profile flex">
+                    <img src="./img/profile.svg" alt="Profile Image">
+                    <h5 class="color-white">John Doe</h5>
+                </div>
             </div>
         </aside>
         <section class="main-section">
@@ -34,7 +70,7 @@
             </header>
             <div class="main-content flex">
                 <nav class="flex">
-                    <a href="#">IN EVIDENZA</a>
+                    <a class="active" href="#">IN EVIDENZA</a>
                     <a href="#">PODCAST</a>
                     <a href="#">CLASSIFICHE</a>
                     <a href="#">GENERI E MOOD</a>
@@ -161,7 +197,9 @@
             </div>
             <div class="player-bar flex">
                 <div class="time color-white">0:25</div>
-                <div class="bar"></div>
+                <div class="bar">
+                    <div class="active-bar"></div>
+                </div>
                 <div class="time color-white">4:35</div>
             </div>
         </div>
@@ -171,7 +209,9 @@
                 <i class="fas fa-desktop"></i>
                 <i class="fas fa-volume-up"></i>
             </div>
-            <div class="bar"></div>
+            <div class="bar">
+                <div class="active-bar"></div>
+            </div>
         </div>
     </footer>
 </body>
