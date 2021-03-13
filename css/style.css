@@ -470,10 +470,7 @@ RESPONSIVE (MOBILE-FIRST)
 
     }
 
-    .main-app .navbar .label {
-        justify-content: flex-start;
-    }
-
+    .main-app .navbar .label,
     .main-app .navbar .account .install,
     .main-app .navbar .account .profile {
         justify-content: flex-start;
@@ -521,6 +518,7 @@ RESPONSIVE (MOBILE-FIRST)
 
 /* From 1200px */
 @media screen and (min-width: 1200px) {
+    /* Cards */
     .main-section .main-content .card {
         width: calc((100% / 6) - 20px);
     }
