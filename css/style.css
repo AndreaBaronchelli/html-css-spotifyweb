@@ -12,9 +12,11 @@ body {
     background-color: #000;
 }
 
-a {
+a,
+svg {
     text-decoration: none;
     color: #7b7e82;
+    fill: #7b7e82;
 }
 
 /* UTILITIES */
@@ -63,7 +65,11 @@ a {
     margin-bottom: 10px;
 }
 
-.main-app .navbar .logo img:last-child {
+.main-app .navbar .logo svg {
+    fill: #fff;
+}
+
+.main-app .navbar .logo svg:last-child {
     width: 80%;
     margin-bottom: 30px;
 }
@@ -77,16 +83,25 @@ a {
     margin-left: 5px;
 }
 
-.navbar img {
+.navbar svg {
     width: 30px;
 }
 
-.navbar img:hover,
+.navbar .label:hover svg,
+.navbar .label:hover i,
+.navbar .label:hover a,
+.navbar .create:hover i,
+.navbar .create:hover a,
+.navbar .install:hover a,
+.navbar .install:hover i,
 .navbar i:hover,
 .navbar a:hover {
     cursor: pointer;
     color: #fff;
+    fill: #fff;
 }
+
+
 
 /* Playlist */
 .main-app .navbar .playlist {
@@ -116,10 +131,13 @@ a {
     flex-direction: column;
 }
 
-.main-app .navbar .account img {
+.main-app .navbar .account .profile svg {
     height: 30px;
     border-radius: 50%;
+    margin-right: 5px;
     background-color: #808080;
+    fill: white;
+    cursor: pointer;
 }
 
 .main-app .navbar .account .install {
