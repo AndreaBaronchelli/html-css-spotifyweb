@@ -342,6 +342,7 @@ svg {
     width: 30px;
     margin-right: 5px;
 }
+
 .player .footer-left h5 {
     font-size: 12px;
 }
@@ -438,10 +439,12 @@ svg {
     border-radius: 5px;
     background-color: #c1c1c1;
 }
+
 .player .footer-center .player-bar .bar:hover,
 .player .footer-right .bar:hover {
     cursor: pointer;
 }
+
 .player .footer-center .player-bar .bar:hover .active-bar,
 .player .footer-right .bar:hover .active-bar {
     background-color: greenyellow;
@@ -494,7 +497,6 @@ RESPONSIVE (MOBILE-FIRST)
         top: 0;
         left: -15px;
         background-color: greenyellow;
-
     }
 
     .main-app .navbar .label,
