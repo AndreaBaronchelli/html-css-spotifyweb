@@ -473,9 +473,11 @@ RESPONSIVE (MOBILE-FIRST)
     .hidden-xs {
         display: block;
     }
+
     .visible-s {
         display: none;
     }
+    
     /* SECTIONS */
     /* Aside */
     .main-app .navbar {
