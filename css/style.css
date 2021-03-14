@@ -49,6 +49,7 @@ svg {
     height: 100%;
     width: 50px;
     padding: 5px 0;
+    font-weight: bold;
 }
 
 /* Top-aside */
@@ -189,7 +190,7 @@ svg {
     height: 90px;
     width: 100%;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .main-section header button {
@@ -201,7 +202,8 @@ svg {
 }
 
 .main-section header button:hover {
-    font-size: 16px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 /* Main Section > Main Content */
@@ -271,6 +273,7 @@ svg {
 
 .main-section .main-content .card .author {
     font-size: 12px;
+    font-weight: bold;
 }
 
 .main-section .main-content .card img {
@@ -294,6 +297,10 @@ svg {
     font-size: 50px;
 }
 
+.main-section .main-content .card:hover {
+    cursor: pointer;
+}
+
 .main-section .main-content .card:hover .layover {
     opacity: 1;
 }
@@ -301,6 +308,7 @@ svg {
 /* Main Section > Main Content > Created */
 .main-section .main-content .subtitle {
     margin-top: 15px;
+    font-weight: bold;
 }
 
 /* Main Section > Main Content > Artists */
@@ -431,11 +439,13 @@ svg {
     border-radius: 5px;
     background-color: #c1c1c1;
 }
-
+.player .footer-center .player-bar .bar:hover,
+.player .footer-right .bar:hover {
+    cursor: pointer;
+}
 .player .footer-center .player-bar .bar:hover .active-bar,
 .player .footer-right .bar:hover .active-bar {
     background-color: greenyellow;
-    cursor: pointer;
 }
 
 .player .footer-center .player-bar .bar:hover .active-bar::after,
