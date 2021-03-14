@@ -71,7 +71,7 @@ svg {
 }
 
 .main-app .navbar .logo svg:last-child {
-    width: 80%;
+    width: 140px;
     margin-bottom: 30px;
 }
 
@@ -88,6 +88,7 @@ svg {
     width: 30px;
 }
 
+.navbar .logo:hover,
 .navbar .label:hover svg,
 .navbar .label:hover i,
 .navbar .label:hover a,
@@ -101,8 +102,6 @@ svg {
     color: #fff;
     fill: #fff;
 }
-
-
 
 /* Playlist */
 .main-app .navbar .playlist {
@@ -471,7 +470,7 @@ RESPONSIVE (MOBILE-FIRST)
     .hidden-xs {
         display: block;
     }
-    .hidden-s {
+    .visible-s {
         display: none;
     }
     /* SECTIONS */
