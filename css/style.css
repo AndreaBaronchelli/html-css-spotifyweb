@@ -277,6 +277,7 @@ svg {
 
 .main-section .main-content .card img {
     width: 100%;
+    display: block;
 }
 
 .main-section .main-content .card .layover {
@@ -331,6 +332,11 @@ svg {
     font-weight: bold;
 }
 
+.player .footer-left,
+.player .footer-right {
+    width: 230px;
+}
+
 /* Footer-left */
 .player .footer-left {
     height: 100%;
@@ -365,6 +371,7 @@ svg {
 
 /* Footer Center */
 .player .footer-center {
+    width: 70%;
     height: 100%;
     flex-direction: column;
     justify-content: center;
@@ -427,6 +434,10 @@ svg {
     width: 80px;
     border-radius: 5px;
     background-color: #5a5a5a;
+}
+
+.player .footer-center .player-bar .bar {
+    width: 25%;
 }
 
 .player .footer-right .bar .active-bar,
