@@ -486,7 +486,7 @@ RESPONSIVE (MOBILE-FIRST)
         display: block;
     }
 
-    .visible-s {
+    .visible-xs {
         display: none;
     }
     
