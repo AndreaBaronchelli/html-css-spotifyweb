@@ -514,6 +514,12 @@ RESPONSIVE (MOBILE-FIRST)
     .main-app .navbar .account .profile img {
         margin-right: 5px;
     }
+    
+    /* Main Section */
+    .main-section {
+        height: 100%;
+        width: calc(100vw - 230px);
+    }
 
     /* Footer */
     .player .footer-left .info {
