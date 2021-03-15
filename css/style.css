@@ -106,6 +106,7 @@ svg {
 /* Playlist */
 .main-app .navbar .playlist {
     margin-top: 20px;
+    min-height: 400px;
 }
 
 .main-app .navbar .playlist ul {
